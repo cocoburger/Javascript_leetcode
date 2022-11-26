@@ -4,12 +4,21 @@ var isPalindrome = function(x) {
     return (reversNum == x ? true : false)
 };
 
-function reverseString(str) {
+const reverseString = (str) => {
     var newString = "";
     for (var i = str.length - 1; i >= 0; i--) {
         newString += str[i];
     }
     return newString;
+}
+
+
+const isPalindrome2 = (x) => {
+    const reversNum = x.toString().split("").reduceRight((acc, cur) => {
+        return Number(acc + cur);
+    },0);
+
+    return (reversNum == x ? true : false)
 }
 
 
